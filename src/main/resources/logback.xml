@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <property name="LOG_HOME" value="/Users/一拳超人/logs"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d [%thread] %-5level %logger{36} %line - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="zmaAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <File>${LOG_HOME}/simis.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${LOG_HOME}/history/%d{yyyy-MM-dd}.simis.%i.log
+            </fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <TimeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>50MB</maxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d [%thread] %-5level %logger{36} %line - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="sqlAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <File>${LOG_HOME}/log4jdbc.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${LOG_HOME}/history/%d{yyyy-MM-dd}.log4jdbc.%i.log
+            </fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <TimeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>50MB</maxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d [%thread] %-5level %logger{36} %line - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="errorAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <File>${LOG_HOME}/simis_error.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${LOG_HOME}/history/%d{yyyy-MM-dd}.simis_error.%i.log
+            </fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <TimeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>50MB</maxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d [%thread] %-5level %logger{36} %line - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <!-- Root Logger -->
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <!-- Application Loggers -->
+    <logger name="com.simis" level="info">
+        <appender-ref ref="zmaAppender"/>
+    </logger>
+
+
+    <!-- 3rdparty Loggers -->
+    <logger name="org.springframework" level="warn">
+        <appender-ref ref="zmaAppender"/>
+    </logger>
+
+    <logger name="org.hibernate" level="warn">
+        <appender-ref ref="zmaAppender"/>
+    </logger>
+
+
+    <!--Logs only SQL. SQL executed within a prepared statement is automatically
+        shown with it's bind arguments replaced with the data bound at that position,
+        for greatly increased readability -->
+    <logger name="jdbc.sqlonly" level="error">
+        <appender-ref ref="sqlAppender"/>
+    </logger>
+    <!-- Logs the SQL, post-execution, including timing statistics on how long
+        the SQL took to execute -->
+    <logger name="jdbc.sqltiming" level="info">
+        <appender-ref ref="sqlAppender"/>
+    </logger>
+    <!-- Logs ALL JDBC calls except for ResultSets. This is a very voluminous
+        output, and is not normally needed unless tracking down a specific JDBC problem -->
+    <logger name="jdbc.audit" level="error">
+        <appender-ref ref="sqlAppender"/>
+    </logger>
+    <!-- Even more voluminous, because all calls to ResultSet objects are logged -->
+    <logger name="jdbc.resultset" level="error">
+        <appender-ref ref="sqlAppender"/>
+    </logger>
+    <!-- Logs connection open and close events as well as dumping all open connection
+        numbers. This is very useful for hunting down connection leak problems -->
+    <logger name="jdbc.connection" level="error">
+        <appender-ref ref="sqlAppender"/>
+    </logger>
+
+
+    <!-- log http requests -->
+    <logger name="monitoring" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="zmaAppender"/>
+    </logger>
+
+    <!-- internal log -->
+    <logger name="net.bull.javamelody" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="zmaAppender"/>
+    </logger>
+
+    <logger name="org.apache.http" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="zmaAppender"/>
+    </logger>
+
+    <logger name="org.quartz" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="zmaAppender"/>
+    </logger>
+
+</configuration>

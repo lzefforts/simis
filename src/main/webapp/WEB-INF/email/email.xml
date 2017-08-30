@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<email>
+	<content>
+		<line>{customerName}同学您好:</line>
+		<line>您已成功报名<![CDATA[<font color="red">]]>{examTime}<![CDATA[</font>]]>的{systemName}{examName}!</line>
+		<line>请于考试前3天登录北京市语言文字测试中心打印准考证。</line>
+		<line>考试当天请携带<![CDATA[<font color="red">]]>身份证<![CDATA[</font>]]>和<![CDATA[<font color="red">]]>准考证<![CDATA[</font>]]>按时参加考试。过期视为弃考。</line>
+		<videoLine>您所购买的视频的下载地址是{videoUrl}<br/>。视频密码是{videoCode}。</videoLine>
+	</content>
+</email>

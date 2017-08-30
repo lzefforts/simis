@@ -1,0 +1,183 @@
+/* CSS Document */
+
+.divMsgBox{
+border:#123059 solid 0px;
+background-color:#FFFFFF;
+display:none;
+}
+.divMsgBox img{
+cursor:hand;
+}
+.divMsgBoxTitleBar{
+background-image:url(../images/msgtitlebg.png);
+height:28px;
+background-repeat:repeat-x;
+}
+.divMsgBoxTitle{
+color:#FFFFFF; 
+margin-top:6px;
+margin-left:2px; 
+font-size:14px; 
+float:left;
+}
+.divMsgBoxIcon{
+background-repeat:no-repeat;
+height:20px;
+width:20px;
+float:left;
+margin-left:2px;
+margin-top:3px;
+}
+.btnOkCancel{
+float:right;
+margin-right:10px;
+margin-top:5px; 
+cursor:hand;
+}
+.btnOkCancel_kp{
+float:right;
+margin-right:10px;
+margin-top:-10px; 
+cursor:hand;
+} 
+.divCreateRole{
+width:602px;
+height:302px;
+border:#123059 solid 1px;
+}
+.divCreateRole div{
+z-index:1002;
+}
+.divCreateRoleTitleBar{
+background-image:url(../images/msgtitlebg.png);
+height:28px;
+background-repeat:repeat-x;
+}
+.divCreateRoleIcon{
+background-image:url(../images/msgicon_add.png);
+background-repeat:no-repeat;
+height:20px;
+width:20px;
+float:left;
+margin-left:2px;
+margin-top:3px;
+}
+.divCreateRoleTitle{
+color:#FFFFFF; 
+margin-top:6px;
+margin-left:2px; 
+font-size:14px; 
+float:left;
+}
+.divCloseIcon{
+background-image:url(../images/msgcloseicon.png);
+float:right;
+height:13px;
+width:12px;
+margin-top:6px;
+margin-right:8px;
+cursor:hand;
+
+}
+.tblCreatorRoleLeft{
+ margin-left:10px;
+ margin-top:10px;
+}
+.tblCreatorRoleLeft td{
+font-size:12px;
+}
+.tblCreatorRoleLeft input{
+ width:203px;
+ border:#123059 solid 1px;
+}
+
+
+
+.divCreateCompany{
+width:402px;
+height:202px;
+border:#123059 solid 1px;
+}
+.divCreateCompany div{
+z-index:1002;
+}
+
+.divCreateCompanyIcon{
+background-image:url(../images/msgicon_add.png);
+background-repeat:no-repeat;
+height:20px;
+width:20px;
+float:left;
+margin-left:2px;
+margin-top:3px;
+}
+
+
+.msgTblGrid 
+{border-width:1;border-collapse:collapse; border-color:'#000000'}
+
+.msgTblGrid td{
+border-top:#000 0px solid;
+border-left:#000 1.5px solid;
+border-bottom:#000 0px solid;
+border-right:#000 1.5px solid;
+border-collapse:collapse; 
+height:24px;
+}
+
+.msgTblHead{
+background-color:#E1E9FA;
+
+}
+.msgTblHead td{
+border-right:#333333 solid 1px;
+border-bottom:#333333 solid 1px;
+padding-left:5px;
+
+}
+
+.msgTblBody{
+background-color:#FAF5F5;
+
+}
+
+.msgTblBody td{
+border-right:#333333 solid 1px;
+border-bottom:#333333 solid 1px;
+padding-left:5px;
+
+}
+ .msgTblBody .msgTdHead{
+background-color:#DDE0E6;
+text-align:center;
+
+}
+ .msgTblBody .msgTdTail{
+border-right:#333333 solid 0px;!important
+
+}
+.msgTblBody .txt{
+border:0px;
+ width:95%;
+ background-color:#FAF5F5; 
+ line-height:24px;
+
+}
+#content{
+font-size:12px;
+}
+.msgTblHj td{
+border-bottom:#333333 solid 1px;
+}
+
+.transparent_class { 
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* ie8  */
+    filter:alpha(opacity=50);    /* ie5-7  */
+    opacity: 0.5;    /* FireFox  */
+}
+
+#bgFilter{ display: none;  position: absolute;  top: 0%;  left: 0%;  width: 100%;  height: 100%;  
+background-color: #7B7D7E;  z-index:1001;}
+
+#bgFilter_kpdKg{ display: none;  position: absolute;  top: 0%;  left: 0%;  width: 100%;  height: 100%;  
+background-color: #7B7D7E;  z-index:1003;  filter: alpha(opacity=50);}

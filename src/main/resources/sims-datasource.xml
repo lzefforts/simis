@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--数据源定义-->
+    <bean id="dataSource"
+          class="org.logicalcobwebs.proxool.ProxoolDataSource">
+        <property name="driver">
+            <value>com.mysql.jdbc.Driver</value>
+        </property>
+
+        <!--数据库-->
+        <property name="driverUrl">
+            <value>jdbc:mysql://127.0.0.1:3306/sims?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull</value>
+        </property>
+        <property name="user" value="root"/>
+        <property name="password" value="1111111a"/>
+        <property name="alias" value="mysql"/>
+        <property name="houseKeepingSleepTime" value="90000"/>
+        <property name="prototypeCount" value="0"/>
+        <property name="maximumConnectionCount" value="50"/>
+        <property name="minimumConnectionCount" value="2"/>
+        <property name="simultaneousBuildThrottle" value="50"/>
+        <property name="maximumConnectionLifetime" value="14400000"/>
+        <property name="houseKeepingTestSql" value="select CURRENT_DATE"/>
+    </bean>
+
+</beans>

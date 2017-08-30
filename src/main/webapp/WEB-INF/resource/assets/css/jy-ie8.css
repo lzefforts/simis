@@ -1,0 +1,178 @@
+.col-sm-4 {
+	display: inline;
+}
+
+.col-sm-5 {
+	display: inline;
+}
+
+.page-header {
+	margin: 10px 0 0px;
+	border-bottom: 1px solid #C1C4C4;
+}
+
+small {
+	font-size: 13px;
+	font-weight: 100;
+}
+
+body {
+	background-color: #F2F5F5 !important;;
+}
+
+.page-header h1 {
+	padding: 0;
+	margin: 0 8px;
+	font-size: 24px;
+	font-weight: lighter;
+	color: #2679b5;
+}
+
+.page-header h1 small {
+	margin: 0 6px;
+	font-size: 14px;
+	font-weight: 100;
+	color: #8089a0;
+}
+
+.page-content {
+	padding: 8px 20px 24px;
+}
+
+.ui-jqgrid-view>.ui-jqgrid-titlebar {
+	height: 40px;
+	line-height: 24px;
+	color: #FFFFFD;
+	background: #88B5D2;
+	padding: 0;
+	font-size: 15px;
+}
+
+/*弹框的表头样式*/
+.ui-dialog .ui-dialog-titlebar {
+	background-color: #8BB5D2;
+	color: #fff;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+	color: #fff;
+}
+
+/*表单框里input的高*//*目前只有税目和销方在用*/
+.ie-height {  
+	height: 30px;
+}
+/*参数配置页面*/
+.widget-main{
+padding:12px;
+}
+td h4{
+color:#478FCA !important;
+}
+
+.profile-info-name{
+text-align:right;
+font-weight:400;
+padding:6px 10px 6px 4px;
+font-weight:400;
+color:#667E99;
+font-size:13px;
+}
+label{
+font-weight:400;
+font-size:85%;
+font-size:14px;
+}
+.profile-info-value{
+padding:6px 4px 6px 6px;
+}
+.widget-box{
+	padding:0;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+	margin:3px 0;
+	border:1px solid #CCC
+}
+.widget-body{
+background-color:#FFF;
+}
+/*参数配置页面*/
+/**登陆界面的调整*/
+input[type="color"], input[type="date"], input[type="datetime-local"], input[type="datetime"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea {
+border:1px solid #D5D5D5;
+padding:5px 4px 6px;
+font-size:14px;
+font-family:inherit;
+box-shadow:none !important;
+transition-duration:0.1s;
+}
+.form-group > label[class*="col-"]{
+padding-top:4px;
+margin-bottom:4px;
+}
+.no-padding-right{
+padding-right:0px !important;
+}
+.col-sm-4{
+width:33.3%;
+}
+.input-icon.input-icon-right > .ace-icon{
+left:auto;
+right:3px;
+}
+.input-icon > .ace-icon{
+padding:0px 3px;
+z-index:2;
+position:absolute;
+top:1px;
+bottom:1px;
+line-height:28px;
+display:inline-block;
+color:#909090;
+font-size:16px;
+            
+}
+span.input-icon{
+display:inline-block;
+}
+.input-icon{
+position:relative;
+}
+/*登陆界面的调整**/
+
+.ui-dialog-content .form-horizontal .form-control {
+    padding: 6px 0px;
+}
+
+/**space-4*/
+.space-4{
+	max-height:1px;
+	min-height:1px;
+	overflow:hidden;
+	margin:4px 0px 3px;
+}
+/*space-4**/
+
+.ui-dialog-content .form-horizontal .form-group .col-sm-2 {
+	padding-left: 0px;
+    padding-right: 0px;
+}
+
+select.col-sm-12{
+	padding-left:0px;
+	padding-right:0px;
+}
+.ui-jqgrid .ui-jqgrid-labels th{
+text-align: center !important;
+}
+/*首页*/
+
+.widget-header{
+	filter:none;
+}
+
+.ui-widget-overlay{
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#44000000', endColorstr='#44000000', GradientType=0)!important;filter:alpha(opacity=65) !important;
+	background:#cccccc 50% 50% repeat !important;
+	z-index:100 !important;
+}

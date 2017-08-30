@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<report name='学员信息'>
+	<report-header>
+		<column name='姓名' mapping='name'/>
+        <column name='性别' mapping='sex'/>
+		<column name='手机号' mapping='phone'/>
+	   	<column name='邮箱' mapping='email'/>
+	   	<column name='身份证号' mapping='cardNo'/>
+	   	<!--<column name='语言委员会注册时间' mapping='clGovRegisterDate' datatype='date' format='yyyy-MM-dd HH:mm:ss'/>-->
+        <column name='是否已经交费' mapping='isAlreadyPaid'/>
+	   	<column name='考试时间' mapping='examTime' datatype='date' format='yyyy-MM-dd HH:mm:ss'/>
+	   	<!--<column name='交费日期' mapping='payDate' datatype='date' format='yyyy-MM-dd HH:mm:ss'/>-->
+		<column name='交费日期' mapping='payDate'/>
+		<column name='注册日期' mapping='createTime' datatype='date' format='yyyy-MM-dd HH:mm:ss'/>
+		<column name='收件地址' mapping='address'/>
+		<column name='数据类型' mapping='dataType'/>
+	</report-header>
+</report>
