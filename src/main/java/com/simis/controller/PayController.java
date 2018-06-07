@@ -340,7 +340,7 @@ public class PayController {
                         LOGGER.info("########总交费金额为{}",result);
                         customerModel.setIsAlreadyPaid(Constants.ALEADY_PAID);
                         customerModel.setPayDate(DateTimeUtil.getDate2String(null,new Date()));
-                        customerModel.setOrderNo(outTradeNo);
+//                        customerModel.setOrderNo(outTradeNo);
                         customerModel.setTotalFee(BigDecimal.valueOf(result));
                         customerModel.setModifyTime(new Date());
                         customerModel.setOperator(Constants.OPERATOR);
