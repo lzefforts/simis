@@ -148,8 +148,20 @@ public class PayController {
 
         Map<String,String> map = new HashMap<>();
         map.put("userId",userId);
+        String out_trade_no = Constants.SYSTEM_IDENTIFY
+                + WeChatPayConstants.WECHAT_IDENTIFY
+                + userId.substring(userId.length()-4,userId.length())
+                + System.currentTimeMillis()
+                + (long) (Math.random() * 10000000L);//"simisTradeWe20170106113324",
+        synchronized (map){
+            map.put(userId,out_trade_no);
+        }
+        //订单编号,用于请求微信支付端
+        customerModel.setOrderNo(out_trade_no);
+        customerService.update(customerModel);
 
-        Map<String,String> requestMap = WXRequestUtil.SendPayment(userId,feeEnum.getDescription(),totalFee,feeEnum.getProductId(),map);
+
+        Map<String,String> requestMap = WXRequestUtil.SendPayment(out_trade_no,userId,feeEnum.getDescription(),totalFee,feeEnum.getProductId(),map);
         synchronized (unPayTradeMapList){
             unPayTradeMapList.add(map);
         }
