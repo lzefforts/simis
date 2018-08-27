@@ -50,7 +50,7 @@ public interface CustomerService {
      * @Title: update
      * @Description: 删除examTime的数据
      * @param examTime
-     * @return void
+     * @return hoho
      * @throws
      */
     void deleteByExamTime(String examTime);
