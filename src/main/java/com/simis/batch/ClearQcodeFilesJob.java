@@ -1,20 +1,16 @@
 package com.simis.batch;
 
-import com.simis.util.DateTimeUtil;
 import com.simis.util.DeleteFileUtil;
 import org.springframework.stereotype.Component;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
-
 /**
  * 定期清除qcode生成的文件
- * Created by ArnoldLee on 17/5/1.
+ *
+ * @author ArnoldLee
+ * @date 17/5/1
  */
 @Component
-public class ClearQcodeFilesJob extends TimerTask {
+public class ClearQcodeFilesJob{
 
     protected static org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(ClearQcodeFilesJob.class);
 
@@ -30,15 +26,5 @@ public class ClearQcodeFilesJob extends TimerTask {
         LOGGER.info("#######定时清除文件,结束###########");
     }
 
-    @Override
-    public void run() {
-        Calendar calendar = Calendar.getInstance();
 
-        int hour = calendar.get(Calendar.HOUR_OF_DAY);
-        LOGGER.info("检查当前时间为{}",hour);
-        if(22 == hour){
-            clearQcodeFiles();
-        }
-
-    }
 }

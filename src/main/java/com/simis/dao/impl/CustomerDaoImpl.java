@@ -36,7 +36,7 @@ public class CustomerDaoImpl extends BaseHibernateDaoImpl implements CustomerDao
             conditions.put("examTime",exportTime);
         }
         query = whereSql(conditions,query,exportTypeEnum);
-        String sql = null;
+        String sql = new String("");
         switch (exportTypeEnum){
             case REGISTER_BUT_NOTPAID:{//已登记已交费
                 sql = createRegisterAndPaidCustomerListQuery(query);//createOnlyRegisterCustomerListQuery(query);
@@ -56,7 +56,7 @@ public class CustomerDaoImpl extends BaseHibernateDaoImpl implements CustomerDao
             }
             default:{}
         }
-        query.setFullSQL(sql.toString());
+        query.setFullSQL(sql);
         return query;
     }
 
