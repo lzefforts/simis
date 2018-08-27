@@ -35,4 +35,7 @@ public class WeChatPayConstants {
 
     //微信查询订单,返回的total_fee的key
     public final static String WECHAT_ORDER_QUERY_TOTAL_FEE = "total_fee";
+
+    //微信支付-微信统一下单请求url
+    public static final String WECHAT_DOWNLOAD_BILL_URL = "https://api.mch.weixin.qq.com/pay/downloadbill";
 }

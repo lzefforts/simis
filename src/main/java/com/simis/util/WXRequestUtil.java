@@ -3,20 +3,7 @@ package com.simis.util;
 /**
  * Created by 一拳超人 on 17/4/5.
  */
-import java.io.*;
-import java.net.ConnectException;
-import java.net.HttpURLConnection;
-import java.net.InetAddress;
-import java.net.URL;
-import java.security.KeyStore;
-import java.util.*;
 
-import javax.net.ssl.SSLContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import com.google.common.collect.Maps;
-import com.simis.common.Constants;
 import com.simis.common.WeChatPayConstants;
 import com.simis.pay.wechat.common.MD5;
 import com.simis.pay.wechat.common.Util;
@@ -34,6 +21,17 @@ import org.glassfish.jersey.internal.util.Base64;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
+
+import javax.net.ssl.SSLContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.net.ConnectException;
+import java.net.HttpURLConnection;
+import java.net.InetAddress;
+import java.net.URL;
+import java.security.KeyStore;
+import java.util.*;
 
 
 /*
@@ -72,8 +70,10 @@ public class WXRequestUtil {
             LOGGER.error("xml转换为map异常",e);
         }
         LOGGER.info("#############微信订单查询-请求结果为:#######begin########");
-        for(String key : data.keySet()){
-            LOGGER.info("key="+key+",value="+data.get(key));
+        if(data!=null){
+            for(String key : data.keySet()){
+                LOGGER.info("key="+key+",value="+data.get(key));
+            }
         }
         LOGGER.info("#############微信订单查询-请求结果打印结束:#######end########");
         return data;
@@ -86,17 +86,9 @@ public class WXRequestUtil {
      * total_fee    订单金额 单位:元
      * product_id   商品ID
      */
-    public static Map<String,String> SendPayment(String userId,String body,double total_fee,String product_id,Map<String,String> sessionMap){
+    public static Map<String,String> SendPayment(String out_trade_no,String userId,String body,double total_fee,String product_id,Map<String,String> sessionMap){
         LOGGER.info("微信支付-用户为{},描述为{},总费用为{},产品编码为{}",userId,body,total_fee,product_id);
         String url = WeChatPayConstants.WECHAT_REQUEST_URL;
-        String out_trade_no = Constants.SYSTEM_IDENTIFY
-                + WeChatPayConstants.WECHAT_IDENTIFY
-                + System.currentTimeMillis()
-                + (long) (Math.random() * 10000000L);//"simisTradeWe20170106113324",
-        synchronized (sessionMap){
-            sessionMap.put(userId,out_trade_no);
-        }
-        LOGGER.info("微信支付-订单号为:"+out_trade_no+",用户id为:"+userId);
         String xml = WXParamGenerate(body,out_trade_no,total_fee,product_id);
         LOGGER.info("微信支付-请求的xml为:"+xml);
         String res = httpsRequest(url,"POST",xml);

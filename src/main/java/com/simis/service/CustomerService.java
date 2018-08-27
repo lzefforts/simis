@@ -2,6 +2,8 @@ package com.simis.service;
 
 import com.simis.model.CustomerModel;
 
+import java.util.List;
+
 /**
  * Created by 一拳超人 on 17/3/29.
  */
@@ -52,4 +54,12 @@ public interface CustomerService {
      * @throws
      */
     void deleteByExamTime(String examTime);
+
+    /**
+     * @Title: update
+     * @Description: 查询出所有待支付的订单list
+     * @return List<CustomerModel>
+     * @throws
+     */
+    List<CustomerModel> queryUnPaidList();
 }
