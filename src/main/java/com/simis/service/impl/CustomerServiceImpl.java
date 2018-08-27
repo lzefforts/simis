@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by 一拳超人 on 17/3/29.
@@ -80,5 +81,12 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void deleteByExamTime(String examTime) {
         customerDao.deleteByExamTime(examTime);
+    }
+
+    @Override
+    public List<CustomerModel> queryUnPaidList() {
+        String hql = "from CustomerModel where isAlreadyPaid = 0 ";
+        List<CustomerModel> results = customerDao.list(hql);
+        return results;
     }
 }
