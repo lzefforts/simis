@@ -103,6 +103,6 @@ public class Constants {
     //发送邮件密码的字典key
     public static final String EMAIL_HOST_KEY = "EMAIL_HOST";
 
-    //oldsdf
-    public static final String TEST = "oldsdf";
+    //test
+    public static final String TEST = "test";
 }
