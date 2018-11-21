@@ -105,7 +105,8 @@ public class PayController {
         boolean ifFull = examBatchService.getIsFull(customerModel.getExamTime());
         if(ifFull){
             resultMsg.setSuccess(false);
-            resultMsg.setMsg("此考试时间交费人数已满!请联系管理员!");
+            resultMsg.setMsg("本期报名人数已满，请在北京市语言文字测试分中心官网删除预报名信息后报名其他测试分中心。下期测试日期请关注北京市语言文字测试分中心官方网址。\n" +
+                    "                                                                  北京人民广播电台语言文字测试分中心");
             return resultMsg;
         }
 
